@@ -1,0 +1,38 @@
+.meteor {
+  transform: rotate(-180deg);
+  animation: meteor 3s linear infinite;
+  animation-delay: var(--meteor-delay, 0s);
+  animation-duration: var(--meteor-duration, 2s);
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 9999px;
+  background: transparent;
+}
+
+.meteor::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--meteor-width, 50px);
+  height: 1px;
+  background: linear-gradient(90deg, #a1a1aa, #e4e4e7, transparent);
+}
+
+@keyframes meteor {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
